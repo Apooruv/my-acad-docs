@@ -1,143 +1,98 @@
 # Reinforcement Learning
 
-> **Exam-focused notes for Unit 4 and Unit 5**
->
-> Coverage is based primarily on the syllabus and the RL resources provided by the course instructor.  
-> The notes prioritize **definitions, algorithms, formulas, comparisons, and problem solving** over general RL fluency.
+Complete exam-oriented notes for **Reinforcement Learning**.
 
 ---
 
-# Syllabus
+## Unit 4 — Foundations of Reinforcement Learning
 
-## Unit 4 — Reinforcement Learning
-
-### Core RL Concepts
-
-- MDP
-- Bellman Equation
-- Policy Iteration
-
-### Passive Learning
-
-- Key concepts
-- Process
-- Direct Utility Estimation
-- Temporal Difference Learning
-- Monte Carlo Methods
-- Advantages and disadvantages
-
-### Active Learning
-
-- Key concepts
-- Process
-- Q-Learning
-- SARSA
-- Advantages and disadvantages
-
-### RL Models
-
-- Model-Based Reinforcement Learning
-- Model-Free Reinforcement Learning
-
----
-
-## Unit 5 — Deep Reinforcement Learning
-
-### DQN
-
-- Deep Q-Network
-- Types of DQN
-- Components
-- Replay Buffer
-
-### Advanced DQN
-
-- Double DQN
-- Dueling Q-Network
-- Prioritized Experience Replay
-
-### Policy-Based / Actor-Critic
-
-- Actor-Critic Method
-- Proximal Policy Optimization
-
-### Other Deep RL
-
-- DyNa-Q Framework
-- Asynchronous Deep RL
-
----
-
-# Unit 4 — Foundations
-
-## 1. MDP
+### 1. Markov Decision Process
 
 [MDP](01-mdp.md)
 
-Topics:
-
-- Markov Decision Process
-- States
-- Actions
+- Markov property
+- States and actions
 - Rewards
-- Transition probabilities
+- Transition model
 - Policies
-- Discount factor
-- Return
-- MDP formulation
+- Returns
+- Episodes
 
 ---
 
-## 2. Bellman Equation
+### 2. Returns and Value Functions
 
-[Bellman Equation](02-bellman-equation.md)
+[Returns and Value Functions](02-returns-and-value-functions.md)
 
-Topics:
-
+- Return
+- Discount factor
 - State-value function
 - Action-value function
-- Bellman expectation equation
-- Bellman optimality equation
-- Discounted future rewards
-- Bellman backup
+- Relationship between value functions
 
 ---
 
-## 3. Policy Iteration
+### 3. Bellman Equations
 
-[Policy Iteration](03-policy-iteration.md)
+[Bellman Equations](03-bellman-equations.md)
 
-Topics:
+- Bellman expectation equation
+- Bellman optimality equation
+- State-value formulation
+- Action-value formulation
+- Numerical problems
+
+---
+
+### 4. Policy Iteration
+
+[Policy Iteration](04-policy-iteration.md)
 
 - Policy evaluation
 - Policy improvement
 - Policy iteration algorithm
-- Convergence
-- Relation to Bellman equations
+- Numerical examples
 
 ---
 
-## 4. Passive Learning
+### 5. Passive Learning
 
-[Passive Learning](04-passive-learning.md)
+[Passive Learning](05-passive-learning.md)
 
-Topics:
-
-- Passive RL
+- Passive learning
 - Fixed policy
 - Utility estimation
-- Direct Utility Estimation
-- Temporal Difference learning
-- Monte Carlo learning
-- Comparison of methods
+- Learning process
+- Methods of passive learning
 
 ---
 
-## 5. Temporal Difference Learning
+### 6. Direct Utility Estimation
 
-[Temporal Difference Learning](05-temporal-difference-learning.md)
+[Direct Utility Estimation](06-direct-utility-estimation.md)
 
-Topics:
+- Monte Carlo utility estimation
+- Episode returns
+- Utility calculation
+- Advantages and disadvantages
+
+---
+
+### 7. Monte Carlo Methods
+
+[Monte Carlo Methods](07-monte-carlo-methods.md)
+
+- First-visit Monte Carlo
+- Every-visit Monte Carlo
+- Return estimation
+- Policy evaluation
+- Advantages and disadvantages
+
+---
+
+### 8. Temporal Difference Learning
+
+[Temporal Difference Learning](08-temporal-difference-learning.md)
 
 - TD prediction
 - TD error
@@ -147,417 +102,277 @@ Topics:
 
 ---
 
-## 6. Monte Carlo Methods
+### 9. Passive Learning Comparison
 
-[Monte Carlo Methods](06-monte-carlo.md)
+[Passive Learning Comparison](09-passive-learning-comparison.md)
 
-Topics:
-
-- Episode-based learning
-- Return calculation
-- First-visit MC
-- Every-visit MC
-- Advantages
-- Disadvantages
+- Direct Utility Estimation
+- Monte Carlo
+- Temporal Difference Learning
+- Comparison
+- Advantages and disadvantages
 
 ---
 
-## 7. Active Learning
+### 10. Active Learning
 
-[Active Learning](07-active-learning.md)
-
-Topics:
+[Active Learning](10-active-learning.md)
 
 - Exploration
 - Exploitation
-- ε-greedy strategy
+- Epsilon-greedy strategy
+- Learning action values
 - Active learning process
 
 ---
 
-## 8. Q-Learning
+### 11. Q-Learning
 
-[Q-Learning](08-q-learning.md)
+[Q-Learning](11-q-learning.md)
 
-Topics:
-
-- Q-function
 - Q-learning algorithm
-- Update equation
-- Off-policy learning
+- Q-value update
+- Learning rate
+- Discount factor
 - Exploration
-- Convergence intuition
+- Numerical problems
 
 ---
 
-## 9. SARSA
+### 12. SARSA
 
-[SARSA](09-sarsa.md)
+[SARSA](12-sarsa.md)
 
-Topics:
-
-- State-Action-Reward-State-Action
-- SARSA update
+- SARSA algorithm
 - On-policy learning
-- Exploration
-- Q-Learning vs SARSA
+- SARSA update
+- Numerical problems
 
 ---
 
-## 10. Model-Based vs Model-Free RL
+### 13. Q-Learning vs SARSA
+
+[Q-Learning vs SARSA](13-q-learning-vs-sarsa.md)
+
+- On-policy vs off-policy
+- Update equations
+- Exploration
+- Comparison
+- Numerical example
+
+---
+
+### 14. Model-Based vs Model-Free RL
 
 [Model-Based vs Model-Free](14-model-based-vs-model-free.md)
 
-Topics:
-
-- Model-based RL
-- Model-free RL
-- Environment model
-- Planning
-- Learning directly from experience
+- Model-based reinforcement learning
+- Model-free reinforcement learning
+- Differences
 - Advantages and disadvantages
-- Comparison
+- Examples
 
 ---
 
-# Unit 5 — Deep Reinforcement Learning
+### 15. Unit 4 Problems — 1
 
-## 11. Deep Q-Network
+[Unit 4 Problems 1](15-unit-4-problems-1.md)
+
+---
+
+### 16. Unit 4 Problems — 2
+
+[Unit 4 Problems 2](16-unit-4-problems-2.md)
+
+---
+
+### 17. Unit 4 Problems — 3
+
+[Unit 4 Problems 3](17-unit-4-problems-3.md)
+
+---
+
+## Unit 5 — Deep Reinforcement Learning
+
+### 18. Deep Q-Network
 
 [DQN](19-dqn.md)
 
-Topics:
-
-- Motivation for DQN
-- Neural-network approximation
+- Deep Q-Network
+- Neural network approximation
+- Replay buffer
+- Target network
 - DQN architecture
-- Q-value prediction
-- Target network
-- Experience replay
-- DQN training process
-- Advantages and limitations
+- DQN algorithm
 
 ---
 
-## 12. DQN Problems
+### 19. DQN Problems
 
-[DQN Problems](20-unit-5-dqn-problems-2.md)
+[Unit 5 DQN Problems](20-unit-5-dqn-problems-2.md)
 
-Focus:
-
-- DQN target calculation
+- DQN numerical problems
+- Target calculation
 - Q-value updates
+- Experience replay
 - Target network
-- Numerical problem solving
 
 ---
 
-## 13. Proximal Policy Optimization
+### 20. Passive and Active Learning
+
+[Unit 5 Passive and Active Learning](21-unit-5-passive-active-learning.md)
+
+- Passive learning
+- Active learning
+- Comparison
+- Reinforcement learning workflow
+
+---
+
+### 21. Proximal Policy Optimization
 
 [PPO](22-ppo.md)
 
-Topics:
-
-- Policy-gradient motivation
-- PPO
-- Probability ratio
-- Advantage function
-- Clipping
-- PPO objective
-- Advantages and disadvantages
-
----
-
-# Remaining Unit 5 Topics
-
-The following topics are included in the consolidated numerical/practice file and should be revised together with the corresponding theory notes:
-
-- Double DQN
-- Dueling DQN
+- Policy gradient
 - Actor-Critic
-- Prioritized Experience Replay
-- Replay Buffer
-- DyNa-Q
-- PPO numericals
-- Asynchronous Deep RL
+- PPO
+- Clipped objective
+- Advantages
+- PPO numerical problems
 
 ---
 
-# Question & Assignment Solutions
+## Revision — Unit 4
 
-## 14. RL Question Paper — Complete Solutions
+### MDP, Bellman Equation and Policy Iteration
 
-[Questions RL — Complete Solutions](24-solutions-questions-rl.md)
+[MDP, Bellman & Policy Iteration](23-mdp-bellman-policy-iteration.md)
 
-Source:
-
-[QUESTIONS_rl (2).pdf](pdfs/QUESTIONS_rl%20%282%29.pdf)
-
-Contains complete solutions to:
-
-- Q1–Q21
-- Theory questions
-- Numerical questions
-- Algorithm/application questions
-
-**Use this as the primary question-paper revision file.**
+- MDP revision
+- Bellman equations
+- Policy iteration
+- Important formulas
+- Numerical problems
 
 ---
 
-## 15. RL CSAI Sample Questions
+## Question Banks and Solutions
 
-[RL CSAI Sample — Complete Solutions](25-solutions-rl-csai-sample.md)
+### Questions RL
 
-Source:
-
-[RL CSAI Sample questions (3).pdf](pdfs/RL%20CSAI%20Sample%20questions%20%283%29.pdf)
-
-Contains complete solutions to:
-
-- Q1–Q17
-- Application-based RL questions
-- Q-Learning numericals
-- Bellman calculations
-- Policy questions
-- Exploration/exploitation problems
+[Solutions — Questions RL](24-solutions-questions-rl.md)
 
 ---
 
-## 16. Deep RL Assignment
+### RL CSAI Sample Questions
 
-[Real DRL Assignment — Complete Solutions](26-solutions-real-drl-assignment.md)
+[Solutions — RL CSAI Sample](25-solutions-rl-csai-sample.md)
 
-Source:
+---
 
-[Real (1).pdf](pdfs/Real%20%281%29.pdf)
+### Real Deep RL Assignment
 
-Contains complete solutions to:
+[Solutions — Real DRL Assignment](26-solutions-real-drl-assignment.md)
 
-- Q1–Q10
-- PER
+---
+
+## Additional Exam Practice
+
+### Additional Exam Numericals and Practice
+
+[Additional Exam Numericals and Practice](27-additional-exam-numericals-and-practice.md)
+
+This section contains additional exam-oriented problems covering:
+
+- MDP
+- Returns
+- Bellman equations
+- Policy evaluation
+- Policy improvement
+- Direct Utility Estimation
+- Monte Carlo
+- Temporal Difference Learning
+- Q-Learning
+- SARSA
 - DQN
 - Double DQN
 - Dueling DQN
-- Real-world DRL applications
+- Actor-Critic
+- PPO
+- Prioritized Experience Replay
+- Replay Buffer
+- Dyna-Q
+- Model-Based vs Model-Free RL
 
 ---
 
-# Final Numerical & Practice File
+## Exam Revision Order
 
-## 17. Additional Numericals and Exam Practice
+For the exam, revise in this order:
 
-[Additional Exam Numericals & Practice](27-additional-exam-numericals-and-practice.md)
+1. [MDP](01-mdp.md)
+2. [Returns and Value Functions](02-returns-and-value-functions.md)
+3. [Bellman Equations](03-bellman-equations.md)
+4. [Policy Iteration](04-policy-iteration.md)
+5. [Passive Learning](05-passive-learning.md)
+6. [Direct Utility Estimation](06-direct-utility-estimation.md)
+7. [Monte Carlo Methods](07-monte-carlo-methods.md)
+8. [Temporal Difference Learning](08-temporal-difference-learning.md)
+9. [Passive Learning Comparison](09-passive-learning-comparison.md)
+10. [Active Learning](10-active-learning.md)
+11. [Q-Learning](11-q-learning.md)
+12. [SARSA](12-sarsa.md)
+13. [Q-Learning vs SARSA](13-q-learning-vs-sarsa.md)
+14. [Model-Based vs Model-Free](14-model-based-vs-model-free.md)
+15. [DQN](19-dqn.md)
+16. [PPO](22-ppo.md)
+17. [Additional Exam Numericals](27-additional-exam-numericals-and-practice.md)
 
-This is the **final consolidated numerical practice file**.
+---
 
-It contains:
+## Quick Revision
 
-### Remaining numericals from the supplied resources
+### Unit 4
 
-- Double DQN numerical
-- Dueling DQN numerical
-- Actor-Critic numerical
+**MDP → Bellman → Policy Iteration → Passive Learning → MC → TD → Active Learning → Q-Learning → SARSA → Model-Based/Model-Free**
 
-### Additional exam-oriented numericals
+### Unit 5
 
-- MDP return
+**DQN → Double DQN → Dueling DQN → Replay Buffer → PER → Actor-Critic → PPO → Dyna-Q → Asynchronous Deep RL**
+
+---
+
+## Important Numerical Topics
+
+Before the exam, make sure you can solve:
+
+- Return calculation
 - Bellman expectation equation
 - Bellman optimality equation
 - Policy evaluation
 - Policy improvement
 - Direct Utility Estimation
-- TD learning
-- Monte Carlo return
-- Q-Learning
-- SARSA
-- DQN
-- Double DQN
-- Dueling DQN
-- Actor-Critic
-- PPO
+- Monte Carlo update
+- TD update
+- Q-Learning update
+- SARSA update
+- DQN target calculation
+- Double DQN target calculation
+- Dueling DQN calculation
+- Actor-Critic TD error
+- PPO objective
 - Prioritized Experience Replay
-- Replay Buffer
-- Dyna-Q
-- Model-Based vs Model-Free
-- Combined Q-Learning vs SARSA problems
-
-### Formula revision
-
-The end of the file contains a compact formula sheet for:
-
-- Return
-- Bellman equations
-- TD learning
-- Q-Learning
-- SARSA
-- DQN
-- Double DQN
-- Dueling DQN
-- Actor-Critic
-- PPO
-- PER
-- Replay Buffer
-- Dyna-Q
+- Dyna-Q update
 
 ---
 
-# Exam Revision Order
-
-For the **highest return in limited preparation time**, use the following order.
-
-## Phase 1 — Understand the Core
-
-1. [MDP](01-mdp.md)
-2. [Bellman Equation](02-bellman-equation.md)
-3. [Policy Iteration](03-policy-iteration.md)
-
-Then make sure you can solve:
-
-\[
-V^\pi(s)
-\]
-
-\[
-V^*(s)
-\]
-
-and policy-improvement calculations.
-
----
-
-## Phase 2 — Unit 4 Learning Methods
-
-4. [Passive Learning](04-passive-learning.md)
-5. [Temporal Difference Learning](05-temporal-difference-learning.md)
-6. [Monte Carlo Methods](06-monte-carlo.md)
-7. [Active Learning](07-active-learning.md)
-8. [Q-Learning](08-q-learning.md)
-9. [SARSA](09-sarsa.md)
-10. [Model-Based vs Model-Free](14-model-based-vs-model-free.md)
-
-### Must know numericals
-
-\[
-G_t
-\]
-
-\[
-\delta=r+\gamma V(s')-V(s)
-\]
-
-\[
-V_{\text{new}}=V+\alpha\delta
-\]
-
-\[
-Q_{\text{new}}
-=
-Q+\alpha[
-r+\gamma\max Q'-Q
-]
-\]
-
-\[
-Q_{\text{SARSA}}
-=
-Q+\alpha[
-r+\gamma Q(s',a')-Q
-]
-\]
-
----
-
-# Phase 3 — DQN
-
-11. [DQN](19-dqn.md)
-12. [DQN Problems](20-unit-5-dqn-problems-2.md)
-
-Know:
-
-- DQN architecture
-- Replay buffer
-- Target network
-- ε-greedy exploration
-- DQN target
-- DQN limitations
-
----
-
-# Phase 4 — Advanced Deep RL
-
-Study:
-
-1. Double DQN
-2. Dueling DQN
-3. Prioritized Experience Replay
-4. Actor-Critic
-5. PPO
-6. Dyna-Q
-7. Asynchronous Deep RL
-
-For each one, know:
-
-- Definition
-- Architecture / process
-- Core equation
-- Algorithm
-- Advantages
-- Disadvantages
-- Difference from related methods
-- One numerical/example
-
----
-
-# Phase 5 — Solve Everything
-
-Use the complete solution files:
-
-1. [RL Questions](24-solutions-questions-rl.md)
-2. [RL CSAI Questions](25-solutions-rl-csai-sample.md)
-3. [DRL Assignment](26-solutions-real-drl-assignment.md)
-4. [Additional Numericals](27-additional-exam-numericals-and-practice.md)
-
-Do not merely read the solutions.
-
-For numerical questions:
-
-> **Hide the solution → solve yourself → compare.**
-
----
-
-# High-Priority Comparisons
-
-These are especially important for theory questions.
-
-| Comparison | Must Know |
-|---|---|
-| Monte Carlo vs TD | Yes |
-| TD vs Direct Utility Estimation | Yes |
-| Q-Learning vs SARSA | **Very important** |
-| Model-Based vs Model-Free | **Very important** |
-| DQN vs Q-Table | Yes |
-| DQN vs Double DQN | **Very important** |
-| DQN vs Dueling DQN | **Very important** |
-| Uniform Replay vs PER | **Very important** |
-| Value-Based vs Policy-Based | Yes |
-| Actor-Critic vs Policy Gradient | **Important** |
-| PPO vs basic Policy Gradient | **Important** |
-| Model-Free vs Dyna-Q | Important |
-
----
-
-# Formula Checklist
-
-Before the exam, make sure you can write these without looking.
+## Final Formula Revision
 
 ### Return
 
 \[
-G_t=
-R_{t+1}
-+\gamma R_{t+2}
-+\gamma^2R_{t+3}
-+\cdots
+G_t = R_{t+1} + \gamma R_{t+2} + \gamma^2R_{t+3} + \cdots
 \]
 
 ### Bellman Expectation
@@ -565,10 +380,10 @@ R_{t+1}
 \[
 V^\pi(s)
 =
-\sum_a\pi(a|s)
-[
-R+\gamma V^\pi(s')
-]
+\sum_a \pi(a|s)
+\sum_{s',r}
+P(s',r|s,a)
+[r+\gamma V^\pi(s')]
 \]
 
 ### Bellman Optimality
@@ -577,192 +392,65 @@ R+\gamma V^\pi(s')
 V^*(s)
 =
 \max_a
-[
-R+\gamma V^*(s')
-]
-\]
-
-### TD Error
-
-\[
-\delta=
-r+\gamma V(s')-V(s)
+\sum_{s',r}
+P(s',r|s,a)
+[r+\gamma V^*(s')]
 \]
 
 ### TD Update
 
 \[
-V(s)\leftarrow V(s)+\alpha\delta
+V(s)
+\leftarrow
+V(s)+\alpha
+[r+\gamma V(s')-V(s)]
 \]
 
 ### Q-Learning
 
 \[
-Q(s,a)\leftarrow
+Q(s,a)
+\leftarrow
 Q(s,a)+
-\alpha[
-r+\gamma\max_{a'}Q(s',a')
--Q(s,a)
-]
+\alpha
+[r+\gamma\max_{a'}Q(s',a')-Q(s,a)]
 \]
 
 ### SARSA
 
 \[
-Q(s,a)\leftarrow
+Q(s,a)
+\leftarrow
 Q(s,a)+
-\alpha[
-r+\gamma Q(s',a')
--Q(s,a)
-]
+\alpha
+[r+\gamma Q(s',a')-Q(s,a)]
 \]
 
 ### DQN Target
 
 \[
-y=
+y =
 r+\gamma\max_{a'}Q_{\text{target}}(s',a')
 \]
 
-### Double DQN
+### TD Error
 
 \[
-a^*=
-\arg\max_{a'}Q_{\text{online}}(s',a')
-\]
-
-\[
-y=
-r+\gamma Q_{\text{target}}(s',a^*)
-\]
-
-### Dueling DQN
-
-\[
-Q(s,a)
-=
-V(s)+
-A(s,a)-\operatorname{mean}(A)
-\]
-
-### PER
-
-\[
-p_i=|\delta_i|^\alpha
-\]
-
-\[
-P(i)=
-\frac{p_i}{\sum_jp_j}
-\]
-
-### Actor-Critic TD Error
-
-\[
-\delta=
+\delta =
 r+\gamma V(s')-V(s)
 \]
 
-### PPO
-
-\[
-L^{CLIP}
-=
-\min
-[
-r_tA_t,
-\operatorname{clip}(r_t,1-\epsilon,1+\epsilon)A_t
-]
-\]
-
 ---
 
-# Last-Day Revision
+## Complete Coverage
 
-If only a few hours remain:
+This folder contains:
 
-### First
-
-Solve all numerical questions in:
-
-[Additional Numericals & Exam Practice](27-additional-exam-numericals-and-practice.md)
-
-### Then
-
-Revise:
-
-- Q-Learning
-- SARSA
-- DQN
-- Double DQN
-- Dueling DQN
-- Actor-Critic
+- Unit 4 theory
+- Unit 4 numerical problems
+- Unit 5 DQN material
 - PPO
-- PER
-- Dyna-Q
-
-### Finally
-
-Go through:
-
-[RL Questions — Complete Solutions](24-solutions-questions-rl.md)
-
-and identify questions you cannot answer without looking at the solution.
-
----
-
-# PDF Resources
-
-The original instructor resources are available in:
-
-[`pdfs/`](pdfs/)
-
-Important RL resources include:
-
-- `QUESTIONS_rl (2).pdf`
-- `RL CSAI Sample questions (3).pdf`
-- `Real (1).pdf`
-- `Deep-RL-Tutorial (1).pdf`
-- `L6 (3).pdf`
-- `ML07_ReinforcementLearning.pdf`
-- `reinforcement-learning (5) (2) (1).pdf`
-- `cs231n_2017_lecture14.pdf`
-
-The PDFs are reference material; **the Markdown notes are organized specifically around the stated Unit 4 and Unit 5 syllabus and exam preparation.**
-
----
-
-# Exam Strategy
-
-For a numerical:
-
-1. Write the relevant formula.
-2. Substitute the given values.
-3. Calculate step-by-step.
-4. Box the final answer.
-5. State what the result means when applicable.
-
-For a theory question:
-
-1. Definition.
-2. Core idea.
-3. Working/algorithm.
-4. Equation.
-5. Advantages.
-6. Disadvantages.
-7. Short comparison/example if appropriate.
-
-For an algorithm question:
-
-```text
-Initialize
-    ↓
-Observe state
-    ↓
-Select action
-    ↓
-Receive reward
-    ↓
-Update value/policy
-    ↓
-Repeat
+- Question-bank solutions
+- Assignment solutions
+- Additional exam-oriented numericals
+- Final formula revision
