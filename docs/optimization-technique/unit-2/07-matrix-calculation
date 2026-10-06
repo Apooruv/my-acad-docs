@@ -1,0 +1,672 @@
+# 07 — Matrix Calculus
+
+## 1. Introduction
+
+Matrix calculus provides the mathematical tools required to formulate and solve optimization problems involving several variables.
+
+For an optimization problem:
+
+\[
+\min_x f(x)
+\]
+
+we need to calculate:
+
+- Gradient
+- Hessian
+- Directional derivatives
+- Quadratic forms
+- First-order conditions
+- Second-order conditions
+
+These concepts are especially important for unconstrained optimization.
+
+---
+
+# 2. Scalar, Vector and Matrix Variables
+
+Let:
+
+\[
+x=
+\begin{bmatrix}
+x_1\\
+x_2\\
+\vdots\\
+x_n
+\end{bmatrix}
+\in\mathbb{R}^n
+\]
+
+and let:
+
+\[
+f:\mathbb{R}^n\rightarrow\mathbb{R}
+\]
+
+Then \(f(x)\) is a scalar-valued function.
+
+Example:
+
+\[
+f(x_1,x_2)=x_1^2+3x_1x_2+2x_2^2
+\]
+
+Here:
+
+\[
+x=
+\begin{bmatrix}
+x_1\\
+x_2
+\end{bmatrix}
+\]
+
+---
+
+# 3. Gradient
+
+The gradient of a scalar function \(f(x)\) is the vector containing all first-order partial derivatives.
+
+\[
+\boxed{
+\nabla f(x)=
+\begin{bmatrix}
+\frac{\partial f}{\partial x_1}\\
+\frac{\partial f}{\partial x_2}\\
+\vdots\\
+\frac{\partial f}{\partial x_n}
+\end{bmatrix}
+}
+\]
+
+It is also written as:
+
+\[
+\boxed{g(x)=\nabla f(x)}
+\]
+
+---
+
+## Example
+
+Let:
+
+\[
+f(x_1,x_2)=x_1^2+3x_1x_2+2x_2^2
+\]
+
+Then:
+
+\[
+\frac{\partial f}{\partial x_1}
+=
+2x_1+3x_2
+\]
+
+and:
+
+\[
+\frac{\partial f}{\partial x_2}
+=
+3x_1+4x_2
+\]
+
+Therefore:
+
+\[
+\boxed{
+\nabla f(x)=
+\begin{bmatrix}
+2x_1+3x_2\\
+3x_1+4x_2
+\end{bmatrix}
+}
+\]
+
+---
+
+# 4. Interpretation of Gradient
+
+The gradient points in the direction of **steepest increase** of a function.
+
+Therefore:
+
+\[
+\boxed{-\nabla f(x)}
+\]
+
+points in the direction of steepest local decrease.
+
+This is why gradient-based minimization methods move in the negative gradient direction.
+
+---
+
+# 5. Directional Derivative
+
+Let \(d\) be a direction vector.
+
+The directional derivative of \(f(x)\) in direction \(d\) is:
+
+\[
+\boxed{
+D_df(x)=\nabla f(x)^Td
+}
+\]
+
+If \(d\) is a unit vector:
+
+\[
+\|d\|=1
+\]
+
+then:
+
+\[
+D_df(x)=\nabla f(x)^Td
+\]
+
+---
+
+# 6. Direction of Steepest Descent
+
+By the Cauchy-Schwarz inequality:
+
+\[
+\nabla f(x)^Td
+\geq
+-\|\nabla f(x)\|\|d\|
+\]
+
+For a unit vector \(d\), the minimum occurs when:
+
+\[
+\boxed{
+d=
+-\frac{\nabla f(x)}
+{\|\nabla f(x)\|}
+}
+\]
+
+Therefore, the negative gradient is the direction of steepest descent.
+
+---
+
+# 7. Jacobian Matrix
+
+For a vector-valued function:
+
+\[
+F:\mathbb{R}^n\rightarrow\mathbb{R}^m
+\]
+
+where:
+
+\[
+F(x)=
+\begin{bmatrix}
+f_1(x)\\
+f_2(x)\\
+\vdots\\
+f_m(x)
+\end{bmatrix}
+\]
+
+the Jacobian is:
+
+\[
+\boxed{
+J(x)=
+\begin{bmatrix}
+\frac{\partial f_1}{\partial x_1}
+&
+\frac{\partial f_1}{\partial x_2}
+&
+\cdots
+&
+\frac{\partial f_1}{\partial x_n}
+\\
+\frac{\partial f_2}{\partial x_1}
+&
+\frac{\partial f_2}{\partial x_2}
+&
+\cdots
+&
+\frac{\partial f_2}{\partial x_n}
+\\
+\vdots
+&
+\vdots
+&
+\ddots
+&
+\vdots
+\\
+\frac{\partial f_m}{\partial x_1}
+&
+\frac{\partial f_m}{\partial x_2}
+&
+\cdots
+&
+\frac{\partial f_m}{\partial x_n}
+\end{bmatrix}
+}
+\]
+
+For a scalar function \(f:\mathbb{R}^n\rightarrow\mathbb{R}\), the Jacobian is closely related to the gradient.
+
+---
+
+# 8. Hessian Matrix
+
+The Hessian contains all second-order partial derivatives.
+
+It is defined as:
+
+\[
+\boxed{
+\nabla^2f(x)=H(x)
+}
+\]
+
+where:
+
+\[
+H(x)=
+\begin{bmatrix}
+\frac{\partial^2f}{\partial x_1^2}
+&
+\frac{\partial^2f}{\partial x_1\partial x_2}
+&
+\cdots
+\\
+\frac{\partial^2f}{\partial x_2\partial x_1}
+&
+\frac{\partial^2f}{\partial x_2^2}
+&
+\cdots
+\\
+\vdots
+&
+\vdots
+&
+\ddots
+\end{bmatrix}
+\]
+
+The Hessian is an \(n\times n\) matrix.
+
+---
+
+# 9. Example of Hessian
+
+Consider:
+
+\[
+f(x_1,x_2)=x_1^2+3x_1x_2+2x_2^2
+\]
+
+We already have:
+
+\[
+\nabla f=
+\begin{bmatrix}
+2x_1+3x_2\\
+3x_1+4x_2
+\end{bmatrix}
+\]
+
+Now differentiate again:
+
+\[
+\frac{\partial^2f}{\partial x_1^2}=2
+\]
+
+\[
+\frac{\partial^2f}{\partial x_1\partial x_2}=3
+\]
+
+\[
+\frac{\partial^2f}{\partial x_2\partial x_1}=3
+\]
+
+\[
+\frac{\partial^2f}{\partial x_2^2}=4
+\]
+
+Therefore:
+
+\[
+\boxed{
+H=
+\begin{bmatrix}
+2&3\\
+3&4
+\end{bmatrix}
+}
+\]
+
+---
+
+# 10. Symmetry of the Hessian
+
+If the second partial derivatives are continuous, then:
+
+\[
+\frac{\partial^2f}
+{\partial x_i\partial x_j}
+=
+\frac{\partial^2f}
+{\partial x_j\partial x_i}
+\]
+
+Therefore:
+
+\[
+\boxed{H=H^T}
+\]
+
+So the Hessian is symmetric under the usual smoothness assumptions.
+
+---
+
+# 11. Quadratic Forms
+
+A quadratic function can be written as:
+
+\[
+\boxed{
+f(x)=\frac12x^TAx+b^Tx+c
+}
+\]
+
+where:
+
+- \(A\) is an \(n\times n\) matrix
+- \(b\) is an \(n\)-dimensional vector
+- \(c\) is a scalar
+
+If \(A\) is symmetric, this form is especially useful in optimization.
+
+---
+
+# 12. Gradient of a Quadratic Function
+
+Consider:
+
+\[
+f(x)=\frac12x^TAx+b^Tx+c
+\]
+
+If \(A\) is symmetric:
+
+\[
+\boxed{
+\nabla f(x)=Ax+b
+}
+\]
+
+The Hessian is:
+
+\[
+\boxed{
+\nabla^2f(x)=A
+}
+\]
+
+---
+
+# 13. General Quadratic Form
+
+For:
+
+\[
+f(x)=x^TAx
+\]
+
+the gradient is:
+
+\[
+\boxed{
+\nabla f(x)=(A+A^T)x
+}
+\]
+
+If \(A\) is symmetric:
+
+\[
+A=A^T
+\]
+
+then:
+
+\[
+\boxed{
+\nabla f(x)=2Ax
+}
+\]
+
+---
+
+# 14. Differential
+
+For a scalar function:
+
+\[
+f=f(x_1,x_2,\ldots,x_n)
+\]
+
+the first differential is:
+
+\[
+\boxed{
+df=
+\sum_{i=1}^{n}
+\frac{\partial f}{\partial x_i}dx_i
+}
+\]
+
+In vector notation:
+
+\[
+\boxed{
+df=\nabla f(x)^Tdx
+}
+\]
+
+---
+
+# 15. Second Differential
+
+The second differential is:
+
+\[
+\boxed{
+d^2f=dx^T H(x)dx
+}
+\]
+
+where:
+
+\[
+H(x)=\nabla^2f(x)
+\]
+
+This expression is important when determining whether a stationary point is a minimum or maximum.
+
+---
+
+# 16. Taylor Expansion
+
+For a function \(f(x)\), around a point \(x\):
+
+\[
+f(x+\Delta x)
+\approx
+f(x)
++
+\nabla f(x)^T\Delta x
++
+\frac12
+\Delta x^TH(x)\Delta x
+\]
+
+Therefore:
+
+\[
+\boxed{
+f(x+\Delta x)
+\approx
+f(x)
++
+g^T\Delta x
++
+\frac12\Delta x^TH\Delta x
+}
+\]
+
+where:
+
+\[
+g=\nabla f(x)
+\]
+
+This is the basis of many optimization algorithms.
+
+---
+
+# 17. Positive Definite Matrix
+
+A symmetric matrix \(A\) is **positive definite** if:
+
+\[
+\boxed{
+x^TAx>0
+}
+\]
+
+for every non-zero vector \(x\).
+
+Equivalent condition:
+
+\[
+\boxed{\lambda_i>0\quad\forall i}
+\]
+
+where \(\lambda_i\) are the eigenvalues of \(A\).
+
+For a positive definite matrix:
+
+\[
+A\succ0
+\]
+
+---
+
+# 18. Positive Semidefinite Matrix
+
+A symmetric matrix \(A\) is positive semidefinite if:
+
+\[
+\boxed{
+x^TAx\geq0
+}
+\]
+
+for every \(x\).
+
+Eigenvalue condition:
+
+\[
+\boxed{\lambda_i\geq0}
+\]
+
+Notation:
+
+\[
+A\succeq0
+\]
+
+---
+
+# 19. Negative Definite Matrix
+
+A symmetric matrix \(A\) is negative definite if:
+
+\[
+\boxed{
+x^TAx<0
+}
+\]
+
+for every non-zero \(x\).
+
+All eigenvalues are negative:
+
+\[
+\boxed{\lambda_i<0}
+\]
+
+Notation:
+
+\[
+A\prec0
+\]
+
+---
+
+# 20. Indefinite Matrix
+
+A matrix is indefinite if:
+
+\[
+x^TAx
+\]
+
+can be both positive and negative depending on \(x\).
+
+Equivalently, the Hessian has both positive and negative eigenvalues.
+
+---
+
+# 21. Matrix Classification
+
+| Matrix | Quadratic form | Eigenvalues |
+|---|---|---|
+| Positive definite | \(x^TAx>0\) | All \(>0\) |
+| Positive semidefinite | \(x^TAx\geq0\) | All \(\geq0\) |
+| Negative definite | \(x^TAx<0\) | All \(<0\) |
+| Negative semidefinite | \(x^TAx\leq0\) | All \(\leq0\) |
+| Indefinite | Both signs possible | Positive and negative |
+
+---
+
+# 22. Why Matrix Calculus Matters in Optimization
+
+For an unconstrained problem:
+
+\[
+\min_x f(x)
+\]
+
+we need to determine:
+
+1. Where the gradient becomes zero.
+2. Whether that point is a minimum, maximum, or saddle point.
+
+The gradient provides the first-order information.
+
+The Hessian provides the second-order information.
+
+Therefore:
+
+\[
+\boxed{
+\text{Gradient} \rightarrow \text{stationary point}
+}
+\]
+
+\[
+\boxed{
+\text{Hessian} \rightarrow \text{classification}
+}
