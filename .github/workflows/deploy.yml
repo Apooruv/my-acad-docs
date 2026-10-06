@@ -4,7 +4,6 @@ on:
   push:
     branches:
       - main
-
   workflow_dispatch:
 
 permissions:
@@ -33,14 +32,13 @@ jobs:
         with:
           python-version: "3.x"
 
-      - name: Install MkDocs Material
-        run: |
-          pip install mkdocs-material
+      - name: Install Material for MkDocs
+        run: pip install mkdocs-material
 
-      - name: Build documentation
-        run: mkdocs build
+      - name: Build site
+        run: mkdocs build --strict
 
-      - name: Setup Pages
+      - name: Setup GitHub Pages
         uses: actions/configure-pages@v5
 
       - name: Upload site
